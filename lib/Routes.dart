@@ -8,15 +8,17 @@ class Routes {
 
   static var planetDetailHandler = new Handler(
     handlerFunc: (BuildContext context, Map<String, dynamic> params) {
-      return new PlanetDetailPage(params["id"]);
+      return new PlanetDetailPage();
     });
 
   static void initRoutes() {
-    _router.define("/detail/:id", handler: planetDetailHandler);
+    //_router.define("/detail/:id", handler: planetDetailHandler);
   }
 
   static void navigateTo(context, String route, {TransitionType transition}) {
-    _router.navigateTo(context, route, transition: transition);
+   // _router.navigateTo(context, route, transition: transition);
+    Navigator.pushNamed(context, route);
+
   }
 
 }

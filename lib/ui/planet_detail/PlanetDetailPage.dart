@@ -8,8 +8,8 @@ class PlanetDetailPage extends StatelessWidget {
 
   final Planet planet;
 
-  PlanetDetailPage(String id) :
-    planet = PlanetDao.getPlanetById(id);
+  PlanetDetailPage() :
+    planet = PlanetDao.getPlanetById("1");
 
 
 

@@ -1,8 +1,10 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+import 'package:planets/FadePageRoute.dart';
 import 'package:planets/Routes.dart';
 import 'package:planets/Theme.dart' as Theme;
 import 'package:planets/model/Planet.dart';
+import 'package:planets/ui/planet_detail/PlanetDetailPage.dart';
 
 class PlanetRow extends StatelessWidget {
 
@@ -86,11 +88,15 @@ class PlanetRow extends StatelessWidget {
   }
 
   _navigateTo(context, String id) {
-    Routes.navigateTo(
-      context,
-      '/detail/${planet.id}',
-      transition: TransitionType.fadeIn
-    );
+
+
+
+    Navigator.of(context)
+        .push(FadePageRoute(widget: PlanetDetailPage()));
+
+
+
+
   }
 }
 
